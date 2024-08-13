@@ -522,6 +522,11 @@ if ($mysqli) {
 	$mysqli->close();
 
 	copy('index.html', constant('LANG') . "/index.html");
+	copy('base.css', constant('LANG') . "/base.css");
+	copy('../ime-api.pdf', constant('LANG') . "/ime-api.pdf");
+	copy('../ime-api_ja.pdf', constant('LANG') . "/ime-api_ja.pdf");
+	copy('../ime-overview.pdf', constant('LANG') . "/ime-overview.pdf");
+	copy('../ime-overview_ja.pdf', constant('LANG') . "/ime-overview_ja.pdf");
 } else {
 	echo "cannot connect";
 }
