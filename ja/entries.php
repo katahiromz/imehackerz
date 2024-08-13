@@ -36,7 +36,7 @@ if ($mysqli) {
 <title>項目一覧</title>
 </head>
 <body>
-<h1>Entries</h1>
+<h1>項目一覧</h1>
 
 <ul>
 <?php
