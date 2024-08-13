@@ -1,0 +1,10 @@
+<html>
+<body>
+<script>
+let language = window.navigator.userLanguage || window.navigator.language;
+if (language.search('ja') >= 0)
+	location.href = "ja/entries.php";
+else
+	location.href = "en/entries.php";
+</script>
+</body></html>

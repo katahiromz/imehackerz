@@ -1,0 +1,143 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 16px;
+	font-family: "Arial", sans-serif;
+	font-size: 16pt;
+	background-color: lightyellow;
+}
+h1 {
+	font-size: 16pt;
+	padding: 8px;
+	color: yellow;
+	background-color: #004400;
+}
+h1 a {
+	color: yellow;
+	background-color: #004400;
+	text-decoration: none;
+}
+h2 {
+	font-size: 16pt;
+	padding: 8px;
+	background-color: #FFCCCC;
+	color: #FF0000;
+	border: 1px solid red;
+}
+h3 {
+	font-size: 14pt;
+	padding: 2px;
+}
+ul {
+	list-style-type: disc;
+	margin: 0;
+	margin-left: 40px;
+}
+p {
+	margin: 8px;
+}
+a {
+	font-weight:bold;
+	color: green;
+	text-decoration: underline;
+}
+a:hover {
+	color: #FF6633;
+	background-color: yellow;
+}
+table {
+	padding: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-family: arial, san-serif;
+}
+th {
+	padding: 8px;
+	border: 2px solid black;
+	font-weight: bold;
+	background-color: yellow;
+}
+td {
+	padding: 8px;
+	border: 2px solid black;
+}
+.header {
+	display: block;
+}
+.contents {
+}
+.footer {
+	display: block;
+	margin-top: 8px;
+	padding-top: 8px;
+	border-top: 1px solid black;
+}
+ul {
+	margin: 32px;
+}
+ul.menu {
+	display: block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	font-family: arial, san-serif;
+	font-size: 12pt;
+}
+ul.menu li {
+	border: 1px solid black;
+	float: left;
+}
+ul.menu li a {
+	display: block;
+	height: 16px;
+	line-height: 16px;
+	padding: 10px;
+	color: white;
+	background-color: red;
+	font-weight: bold;
+	text-decoration: none;
+}
+ul.menu li a:hover {
+	background-color: yellow;
+	color: black;
+}
+.history {
+	list-style-type: none;
+}
+.history ul {
+	list-style-type: disc;
+}
+.shot {
+	float: left;
+	margin: 2px;
+	border: 2px red solid;
+	display: block;
+	text-align: center;
+}
+.shots {
+}
+.box {
+	text-align: center;
+	padding: 8px;
+	margin: 32px;
+	background-color: yellow;
+	border: 2px gray solid;
+}
+.clearFix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearFix {
+	min-height: 1px;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 16px;
+}
