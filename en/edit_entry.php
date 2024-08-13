@@ -129,7 +129,7 @@ Return Value:<br />
 <textarea rows="5" cols="55" name="return_value"><?= get_field("return_value");?></textarea><br />
 Remarks:<br />
 <textarea rows="5" cols="55" name="remarks"><?= get_field("remarks");?></textarea><br />
-See Also: <input type="text" size="32" name="see_also" value="<?= get_field("see_also");?>" /><br />
+See Also (separated by '|'): <input type="text" size="32" name="see_also" value="<?= get_field("see_also");?>" /><br />
 Header: <input type="text" size="32" name="header" value="<?= get_field("header");?>" /><br />
 Modules: <input type="text" size="32" name="modules" value="<?= get_field("modules");?>" /><br />
 Info Sources:<br />
