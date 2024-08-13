@@ -301,13 +301,13 @@ function get_body($entry_type) {
 		'<tr>' . "\n" .
 			'<th>Header</th>' . "\n" .
 			'<td>' . (
-				get_field('header') != '' ? get_field('header') : "(Unknown)"
+				get_field('header') != '' ? get_field('header') : "N/A"
 			) . "</td>\n" .
 		'</tr>' . "\n" .
 		'<tr>' . "\n" .
 			'<th>Modules</th>' . "\n" .
 			'<td>' . (
-				get_field('modules') != '' ? get_field('modules') : "(Unknown)"
+				get_field('modules') != '' ? get_field('modules') : "N/A"
 			) . "</td>\n" .
 		'</tr>' . "\n" .
 		'</table>' . "\n" : ""
