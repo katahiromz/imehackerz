@@ -86,13 +86,13 @@ Syntax:<br />
 <textarea rows="5" cols="55" name="syntax"></textarea><br />
 Parameters:<br />
 <textarea rows="5" cols="55" name="parameters"></textarea><br />
-Return Value値:<br />
+Return Value:<br />
 <textarea rows="5" cols="55" name="return_value"></textarea><br />
-Remaks:<br />
+Remarks:<br />
 <textarea rows="5" cols="55" name="remarks"></textarea><br />
 See Also: <input type="text" size="32" name="see_also" /><br />
 Header: <input type="text" size="32" name="header" /><br />
-Modules: <input type="text" size="32" name="modules" /><br />
+Modules (separated by '|'): <input type="text" size="32" name="modules" /><br />
 Info Sources:<br />
 <textarea rows="5" cols="55" name="sources"></textarea><br />
 Translators:<br />
