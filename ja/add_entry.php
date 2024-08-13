@@ -58,7 +58,7 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 		}
 		$q .= ")";
 		if ($mysqli->query($q)) {
-			header("Location: show.php?entry_name=" . $values['entry_name']);
+			header("Location: show_entry.php?entry_name=" . $values['entry_name']);
 			exit;
 		} else {
 			echo $mysqli->error;

@@ -43,7 +43,7 @@ if ($mysqli) {
 	$i = 0;
 	foreach ($names as $name) {
 		echo "<li>";
-		echo "<a href=\"show.php?entry_name=" . $name . "\">" . $translations[$i] . " " . $types[$i] . "</a>";
+		echo "<a href=\"show_entry.php?entry_name=" . $name . "\">" . $translations[$i] . " " . $types[$i] . "</a>";
 		echo "</li>";
 		$i++;
 	}

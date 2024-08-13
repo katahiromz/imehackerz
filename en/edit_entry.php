@@ -149,6 +149,6 @@ Next Page: <input type="text" size="32" name="next_page" value="<?= get_field("n
 	<a href="entries.php">Entries</a> |
 	<a href="add_entry.php">Add Entry</a> | 
 	<a href="add_table.php">Add Table</a> | 
-	<a href="show.php?entry_name=<?= $_GET["entry_name"] ?>">Show "<?= $_GET["entry_name"] ?>"</a>
+	<a href="show_entry.php?entry_name=<?= $_GET["entry_name"] ?>">Show "<?= $_GET["entry_name"] ?>"</a>
 </p>
 </body></html>

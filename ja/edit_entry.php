@@ -149,6 +149,6 @@ ROSにおける所在:<br />
 	<a href="entries.php">項目一覧</a> |
 	<a href="add_entry.php">項目を追加する</a> | 
 	<a href="add_table.php">表を追加する</a> | 
-	<a href="show.php?entry_name=<?= $_GET["entry_name"] ?>"><?= $_GET["entry_name"] ?>を表示する</a>
+	<a href="show_entry.php?entry_name=<?= $_GET["entry_name"] ?>"><?= $_GET["entry_name"] ?>を表示する</a>
 </p>
 </body></html>

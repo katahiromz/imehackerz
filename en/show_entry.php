@@ -172,7 +172,7 @@ function get_see_also() {
 		$a = array();
 		foreach ($see_also as $item) {
 			$item = trim($item);
-			$a[] = "<a href=\"show.php?entry_name=" . $item . "\">" . $item . "</a>";
+			$a[] = "<a href=\"show_entry.php?entry_name=" . $item . "\">" . $item . "</a>";
 		}
 		return implode(", ", $a);
 	}
@@ -188,7 +188,7 @@ function replace_keyword($text) {
 		foreach ($see_also as $item) {
 			$item = trim($item);
 			$text = preg_replace("/\\b" . $item . "\\b/",
-				'<a href="show.php?entry_name=' . $item . '">' . $item . "</a>",
+				'<a href="show_entry.php?entry_name=' . $item . '">' . $item . "</a>",
 				$text
 			);
 		}
