@@ -90,9 +90,9 @@ Return Value:<br />
 <textarea rows="5" cols="55" name="return_value"></textarea><br />
 Remarks:<br />
 <textarea rows="5" cols="55" name="remarks"></textarea><br />
-See Also: <input type="text" size="32" name="see_also" /><br />
+See Also (separated by '|'): <input type="text" size="32" name="see_also" /><br />
 Header: <input type="text" size="32" name="header" /><br />
-Modules (separated by '|'): <input type="text" size="32" name="modules" /><br />
+Modules: <input type="text" size="32" name="modules" /><br />
 Info Sources:<br />
 <textarea rows="5" cols="55" name="sources"></textarea><br />
 Translators:<br />
