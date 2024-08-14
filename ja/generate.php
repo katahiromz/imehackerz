@@ -388,6 +388,9 @@ if ($mysqli) {
 	$q .= " FROM entries";
 	$result = $mysqli->query($q);
 	if ($result) {
+		$output_dir = constant('LANG');
+		mkdir($output_dir);
+
 		$arrays = array();
 		while ($assoc = $result->fetch_array(MYSQLI_ASSOC)) {
 			$arrays[] = $assoc;
@@ -397,7 +400,7 @@ if ($mysqli) {
 			$header = get_header($entry_name . ' ' . $entry_type, $entry_name);
 			$body = get_body($entry_type);
 			$footer = get_footer($entry_name);
-			$fp = fopen(constant('LANG') . "/" . entry_name_to_file_name($entry_name) . ".html", "w");
+			$fp = fopen($output_dir . "/" . entry_name_to_file_name($entry_name) . ".html", "w");
 			if ($fp) {
 				fputs($fp, $header);
 				fputs($fp, $body);
@@ -406,7 +409,7 @@ if ($mysqli) {
 			}
 		}
 
-		$fp = fopen(constant('LANG') . "/articles.html", "w");
+		$fp = fopen($output_dir . "/articles.html", "w");
 		if ($fp) {
 			$header = get_header("記事", "articles");
 			fputs($fp, $header);
@@ -428,7 +431,7 @@ if ($mysqli) {
 			fclose($fp);
 		}
 
-		$fp = fopen(constant('LANG') . "/functions.html", "w");
+		$fp = fopen($output_dir . "/functions.html", "w");
 		if ($fp) {
 			$header = get_header("関数", "functions");
 			fputs($fp, $header);
@@ -450,7 +453,7 @@ if ($mysqli) {
 			fclose($fp);
 		}
 
-		$fp = fopen(constant('LANG') . "/messages.html", "w");
+		$fp = fopen($output_dir . "/messages.html", "w");
 		if ($fp) {
 			$header = get_header("メッセージ", "messages");
 			fputs($fp, $header);
@@ -472,7 +475,7 @@ if ($mysqli) {
 			fclose($fp);
 		}
 
-		$fp = fopen(constant('LANG') . "/structures.html", "w");
+		$fp = fopen($output_dir . "/structures.html", "w");
 		if ($fp) {
 			$header = get_header("構造体", "structures");
 			fputs($fp, $header);
@@ -494,7 +497,7 @@ if ($mysqli) {
 			fclose($fp);
 		}
 
-		$fp = fopen(constant('LANG') . "/macros.html", "w");
+		$fp = fopen($output_dir . "/macros.html", "w");
 		if ($fp) {
 			$header = get_header("マクロ", "macros");
 			fputs($fp, $header);
@@ -521,12 +524,12 @@ if ($mysqli) {
 
 	$mysqli->close();
 
-	copy('index.html', constant('LANG') . "/index.html");
-	copy('base.css', constant('LANG') . "/base.css");
-	copy('../ime-api.pdf', constant('LANG') . "/ime-api.pdf");
-	copy('../ime-api_ja.pdf', constant('LANG') . "/ime-api_ja.pdf");
-	copy('../ime-overview.pdf', constant('LANG') . "/ime-overview.pdf");
-	copy('../ime-overview_ja.pdf', constant('LANG') . "/ime-overview_ja.pdf");
+	copy('index.html', $output_dir . "/index.html");
+	copy('base.css', $output_dir . "/base.css");
+	copy('../ime-api.pdf', $output_dir . "/ime-api.pdf");
+	copy('../ime-api_ja.pdf', $output_dir . "/ime-api_ja.pdf");
+	copy('../ime-overview.pdf', $output_dir . "/ime-overview.pdf");
+	copy('../ime-overview_ja.pdf', $output_dir . "/ime-overview_ja.pdf");
 } else {
 	echo "cannot connect";
 }
