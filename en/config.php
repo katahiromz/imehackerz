@@ -5,6 +5,7 @@ define('LANG', "en");
 define('LANGNAME', "English");
 define('ALTLANG', "ja");
 define('ALTLANGNAME', "Japanese");
+define('PARAM_SEP', "///");
 
 function imehack_translate($mysqli, $original)
 {

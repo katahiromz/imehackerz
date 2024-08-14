@@ -70,7 +70,7 @@ function get_table($table_name) {
 		
 		if ($row) {
 			$value = $row[0];
-			$lines = explode("///", $value);
+			$lines = explode(constant('PARAM_SEP'), $value);
 			$a = array();
 			foreach ($lines as $line) {
 				$a[] = explode(" --- ", $line);
@@ -146,7 +146,7 @@ function get_parameters($name) {
 	if (strstr($value, "---") === FALSE) {
 		return $value;
 	}
-	$lines = explode("///", $value);
+	$lines = explode(constant('PARAM_SEP'), $value);
 	$a = array();
 	foreach ($lines as $line) {
 		$a[] = explode(" --- ", $line);
