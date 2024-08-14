@@ -6,6 +6,7 @@ define('LANGNAME', "Japanese");
 define('ALTLANG', "en");
 define('ALTLANGNAME', "English");
 define('PARAM_SEP', "///");
+define('PARAM_DASH', "---");
 define('TYPE_ARTICLE', '');
 define('TYPE_FUNCTION', '関数');
 define('TYPE_MESSAGE', 'メッセージ');

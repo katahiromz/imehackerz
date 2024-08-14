@@ -113,11 +113,13 @@ function get_table($table_name) {
 			$lines = explode(constant('PARAM_SEP'), $value);
 			$a = array();
 			foreach ($lines as $line) {
-				$a[] = explode(" --- ", $line);
+				$a[] = explode(constant('PARAM_DASH'), $line);
 			}
 			$str = "<table border=\"1\" align=\"center\">\n";
 			$i = 0;
 			foreach ($a as $item) {
+				$item[0] = trim($item[0]);
+				$item[1] = trim($item[1]);
 				$str .= "<tr\n>";
 				if ($i == 0) {
 					$str .= "\t<th>" . $item[0] . "</th>\n";
@@ -129,6 +131,7 @@ function get_table($table_name) {
 					$str .= "\t<td>" . $item[0] . "</td>\n";
 					$str .= "\t<td>" . get_paragraph($item[1]) . "</td>\n";
 					if (count($item) == 3) {
+						$item[2] = trim($item[2]);
 						$str .= "\t<td>" . get_paragraph($item[2]) . "</td>\n";
 					}
 				}
@@ -190,16 +193,18 @@ function get_paragraph($field) {
 
 function get_parameters($name) {
 	$value = get_field($name);
-	if (strstr($value, "---") === FALSE) {
+	if (strstr($value, constant('PARAM_DASH')) === FALSE) {
 		return $value;
 	}
 	$lines = explode(constant('PARAM_SEP'), $value);
 	$a = array();
 	foreach ($lines as $line) {
-		$a[] = explode(" --- ", $line);
+		$a[] = explode(constant('PARAM_DASH'), $line);
 	}
 	$str = "<dl>\n";
 	foreach ($a as $item) {
+		$item[0] = trim($item[0]);
+		$item[1] = trim($item[1]);
 		$str .= "<dt>" . $item[0] . "</dt>\n";
 		$str .= "<dd>" . get_paragraph($item[1]) . "</dd>\n";
 	}
