@@ -417,7 +417,7 @@ if ($mysqli) {
 			foreach ($arrays as $assoc) {
 				$entry_name = $assoc['entry_name'];
 				$entry_type = $assoc['entry_type'];
-				if ($entry_type != '') continue;
+				if ($entry_type != constant('TYPE_ARTICLE')) continue;
 				fputs($fp, '<li><a href="' . entry_name_to_file_name($entry_name) . '.html">' . translate($entry_name) . " " . $entry_type . '</a></li>' . "\n");
 			}
 			fputs($fp, 
@@ -439,7 +439,7 @@ if ($mysqli) {
 			foreach ($arrays as $assoc) {
 				$entry_name = $assoc['entry_name'];
 				$entry_type = $assoc['entry_type'];
-				if ($entry_type != '関数') continue;
+				if ($entry_type != constant('TYPE_FUNCTION')) continue;
 				fputs($fp, '<li><a href="' . entry_name_to_file_name($entry_name) . '.html">' . $entry_name . " " . $entry_type . '</a></li>' . "\n");
 			}
 			fputs($fp, 
@@ -461,7 +461,7 @@ if ($mysqli) {
 			foreach ($arrays as $assoc) {
 				$entry_name = $assoc['entry_name'];
 				$entry_type = $assoc['entry_type'];
-				if ($entry_type != 'メッセージ' && $entry_type != '通知コード' && $entry_type != 'アクション') continue;
+				if ($entry_type != constant('TYPE_MESSAGE') && $entry_type != constant('TYPE_NOTIF_CODE') && $entry_type != constant('TYPE_ACTION')) continue;
 				fputs($fp, '<li><a href="' . entry_name_to_file_name($entry_name) . '.html">' . $entry_name . " " . $entry_type . '</a></li>' . "\n");
 			}
 			fputs($fp, 

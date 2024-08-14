@@ -6,6 +6,11 @@ define('LANGNAME', "Japanese");
 define('ALTLANG', "en");
 define('ALTLANGNAME', "English");
 define('PARAM_SEP', "///");
+define('TYPE_ARTICLE', '');
+define('TYPE_FUNCTION', '関数');
+define('TYPE_MESSAGE', 'メッセージ');
+define('TYPE_NOTIF_CODE', '通知コード');
+define('TYPE_ACTION', 'アクション');
 
 function imehack_translate($mysqli, $original)
 {
