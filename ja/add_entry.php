@@ -81,6 +81,9 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 	<a href="generate.php">生成する</a>
 </p>
 <hr />
+
+<h1>項目を追加する</h1>
+
 <form method="POST">
 <input type="hidden" name="tepo" value="don" />
 項目名: <input type="text" size="32" name="entry_name" /><br />

@@ -82,6 +82,9 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 	<a href="generate.php">Generate</a>
 </p>
 <hr />
+
+<h1>Add Entry</h1>
+
 <form method="POST">
 <input type="hidden" name="tepo" value="don" />
 Entry Name: <input type="text" size="32" name="entry_name" /><br />
