@@ -121,7 +121,8 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 	<a href="add_entry.php">項目を追加する</a> | 
 	<a href="add_table.php">表を追加する</a> | 
 	<a href="show_entry.php?entry_name=<?= $_GET["entry_name"] ?>"><?= $_GET["entry_name"] ?>を表示する</a> |
-	<a href="generates.php">生成する</a> | 
+	<a href="../en/edit_entry.php?entry_name=<?= $_GET["entry_name"] ?>">English</a> |
+	<a href="generates.php">生成する</a>
 </p>
 
 <hr />
@@ -166,6 +167,7 @@ ROSにおける所在:<br />
 	<a href="add_entry.php">項目を追加する</a> | 
 	<a href="add_table.php">表を追加する</a> | 
 	<a href="show_entry.php?entry_name=<?= $_GET["entry_name"] ?>"><?= $_GET["entry_name"] ?>を表示する</a> |
-	<a href="generates.php">生成する</a> | 
+	<a href="../en/edit_entry.php?entry_name=<?= $_GET["entry_name"] ?>">English</a> |
+	<a href="generates.php">生成する</a>
 </p>
 </body></html>

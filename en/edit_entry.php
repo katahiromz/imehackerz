@@ -121,6 +121,7 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 	<a href="add_entry.php">Add Entry</a> | 
 	<a href="add_table.php">Add Table</a> | 
 	<a href="show_entry.php?entry_name=<?= $_GET["entry_name"] ?>">Show "<?= $_GET["entry_name"] ?>"</a> |
+	<a href="../ja/edit_entry.php?entry_name=<?= $_GET["entry_name"] ?>">Japanese</a> |
 	<a href="generate.php">Generate</a>
 </p>
 
@@ -166,6 +167,7 @@ Next Page: <input type="text" size="32" name="next_page" value="<?= get_field("n
 	<a href="add_entry.php">Add Entry</a> | 
 	<a href="add_table.php">Add Table</a> | 
 	<a href="show_entry.php?entry_name=<?= $_GET["entry_name"] ?>">Show "<?= $_GET["entry_name"] ?>"</a> |
+	<a href="../ja/edit_entry.php?entry_name=<?= $_GET["entry_name"] ?>">Japanese</a> |
 	<a href="generate.php">Generate</a>
 </p>
 
