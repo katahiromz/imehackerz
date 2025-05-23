@@ -528,7 +528,30 @@ if ($mysqli) {
 
 	$mysqli->close();
 
-	copy('index.html', $output_dir . "/index.html");
+	$fp = fopen($output_dir . "/index.html", "w");
+	if ($fp) {
+		$header = get_header("IME Hackerz", "index");
+		fputs($fp, $header);
+		fputs($fp, "<h2>Welcome To IME Hackerz</h2>\n");
+		$now = date("Y-m-d H:i:s");
+		$body =<<<__HTML__
+<p>IME Hackerz is an information site about old IME technology.</p>
+<ul>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="functions.html">Functions</a></li>
+    <li><a href="messages.html">Messages</a></li>
+    <li><a href="structures.html">Structures</a></li>
+</ul>
+</div>
+<p><a href="https://github.com/katahiromz/imehackerz" target="_blank">Browse GitHub repository</a></p>
+<p>Last Updated: {$now}</p>
+__HTML__;
+		fputs($fp, $body);
+		$footer = get_footer('index');
+		fputs($fp, $footer);
+		fclose($fp);
+	}
+
 	copy('base.css', $output_dir . "/base.css");
 	copy('../ime-api.pdf', $output_dir . "/ime-api.pdf");
 	copy('../ime-api_ja.pdf', $output_dir . "/ime-api_ja.pdf");

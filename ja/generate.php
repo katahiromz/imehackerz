@@ -530,7 +530,32 @@ if ($mysqli) {
 
 	$mysqli->close();
 
-	copy('index.html', $output_dir . "/index.html");
+	$fp = fopen($output_dir . "/index.html", "w");
+	if ($fp) {
+		$header = get_header("IMEハッカーズ☆", "index");
+		fputs($fp, $header);
+		fputs($fp, "<h2>「IMEハッカーズ☆」へようこそ！</h2>\n");
+		$now = date("Y-m-d H:i:s");
+		$body =<<<__HTML__
+<div class="contents">
+<p>IMEハッカーズ☆は、古いIMEの技術情報がてんこ盛りな情報サイトです。</p>
+<ul>
+	<li><a href="articles.html">記事</a></li>
+	<li><a href="functions.html">関数</a></li>
+	<li><a href="messages.html">メッセージ</a></li>
+	<li><a href="structures.html">構造体</a></li>
+	<li><a href="macros.html">マクロ</a></li>
+</ul>
+</div>
+<p><a href="https://github.com/katahiromz/imehackerz" target="_blank">GitHub レポジトリを見る</a></p>
+<p>最終更新日時：{$now}</p>
+__HTML__;
+		fputs($fp, $body);
+		$footer = get_footer('index');
+		fputs($fp, $footer);
+		fclose($fp);
+	}
+
 	copy('base.css', $output_dir . "/base.css");
 	copy('../ime-api.pdf', $output_dir . "/ime-api.pdf");
 	copy('../ime-api_ja.pdf', $output_dir . "/ime-api_ja.pdf");
