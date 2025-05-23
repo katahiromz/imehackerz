@@ -393,7 +393,8 @@ if ($mysqli) {
 	$q .= " FROM entries";
 	$result = $mysqli->query($q);
 	if ($result) {
-		$output_dir = constant('LANG');
+		mkdir('../output/');
+		$output_dir = '../output/' . constant('LANG');
 		mkdir($output_dir);
 
 		$arrays = array();
