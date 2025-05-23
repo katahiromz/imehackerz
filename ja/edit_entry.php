@@ -69,7 +69,7 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 		$q .= $mysqli->real_escape_string($_GET["entry_name"]);
 		$q .= "'";
 		if ($mysqli->query($q)) {
-			echo "Updated.";
+			echo "更新されました。";
 		} else {
 			echo $mysqli->error;
 		}
