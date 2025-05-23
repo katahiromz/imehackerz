@@ -536,7 +536,7 @@ if ($mysqli) {
 			foreach ($arrays as $assoc) {
 				$entry_name = $assoc['entry_name'];
 				$entry_type = $assoc['entry_type'];
-				if ($entry_type != 'macro') continue;
+				if ($entry_type != constant('TYPE_MACRO')) continue;
 				fputs($fp, '<li><a href="' . entry_name_to_file_name($entry_name) . '.html">' . $entry_name . " " . $entry_type . '</a></li>' . "\n");
 			}
 			fputs($fp, 

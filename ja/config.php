@@ -14,6 +14,7 @@ define('TYPE_NOTIF_CODE', '通知コード');
 define('TYPE_ACTION', 'アクション');
 define('TYPE_STRUCTURE', '構造体');
 define('TYPE_INTERFACE', 'インターフェース');
+define('TYPE_MACRO', 'マクロ');
 
 function imehack_translate($mysqli, $original)
 {
