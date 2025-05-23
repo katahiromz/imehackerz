@@ -16,6 +16,7 @@ function entry_name_to_file_name($entry_name) {
 	$entry_name = str_replace(",", "", $entry_name);
 	$entry_name = str_replace(" ", "-", $entry_name);
 	$entry_name = str_replace("/", "-", $entry_name);
+	$entry_name = str_replace("::", "__", $entry_name);
 	return $entry_name;
 }
 
@@ -29,15 +30,16 @@ function get_header($title, $entry_name) {
 </head>
 <body>
 <div class="header">
-    <h1><a href="index.html">IMEハッカーズ☆</a></h1>
-    <ul class="menu clearFix">
-        <li><a href="articles.html">記事</a></li>
-        <li><a href="functions.html">関数</a></li>
-        <li><a href="messages.html">メッセージ</a></li>
-        <li><a href="structures.html">構造体</a></li>
-        <li><a href="macros.html">マクロ</a></li>
-        <li><a href="../' . constant('ALTLANG') . '/' . entry_name_to_file_name($entry_name) . '.html">' . constant('ALTLANGNAME') . '</a></li>
-    </ul>
+	<h1><a href="index.html">IMEハッカーズ☆</a></h1>
+	<ul class="menu clearFix">
+		<li><a href="articles.html">記事</a></li>
+		<li><a href="functions.html">関数</a></li>
+		<li><a href="messages.html">メッセージ</a></li>
+		<li><a href="structures.html">構造体</a></li>
+		<li><a href="interfaces.html">インターフェース</a></li>
+		<li><a href="macros.html">マクロ</a></li>
+		<li><a href="../' . constant('ALTLANG') . '/' . entry_name_to_file_name($entry_name) . '.html">' . constant('ALTLANGNAME') . '</a></li>
+	</ul>
 </div>
 <div class="contents">' . "\n";
 }
@@ -45,7 +47,7 @@ function get_header($title, $entry_name) {
 function get_footer($entry_name) {
 	return '</div>
 <div class="footer">
-    <small>&copy; katahiromz</small><br/>
+	<small>&copy; katahiromz</small><br/>
 	<small><a href="mailto:katayama.hirofumi.mz@gmail.com?subject=' . entry_name_to_file_name($entry_name) . '">このページの間違いを報告する</a></small><br/>
 	<small><a href="mailto:katayama.hirofumi.mz@gmail.com">katayama.hirofumi.mz@gmail.com</a></small>
 </div>
@@ -53,15 +55,15 @@ function get_footer($entry_name) {
 }
 
 function get_values($values) {
-    $array = array();
-    foreach ($values as $value) {
-        if (isset($_POST[$value])) {
-            $array[$value] = $_POST[$value];
-        } else if (isset($_GET[$value])) {
-            $array[$value] = $_GET[$value];
-        }
-    }
-    return $array;
+	$array = array();
+	foreach ($values as $value) {
+		if (isset($_POST[$value])) {
+			$array[$value] = $_POST[$value];
+		} else if (isset($_GET[$value])) {
+			$array[$value] = $_GET[$value];
+		}
+	}
+	return $array;
 }
 
 function get_field($name) {
@@ -179,10 +181,10 @@ function get_paragraph($field) {
 		} else if (preg_match('/\[table:([^\]]+)\]/m', $paragraph, $matches)) {
 			$paragraph = get_table($matches[1]);
 		} else if (preg_match('/&lt;pre&gt;/m', $paragraph, $matches) &&
-                   preg_match('/&lt;\/pre&gt;/m', $paragraph, $matches)) {
-            $paragraph = str_replace("&lt;pre&gt;", "", $paragraph);
-            $paragraph = str_replace("&lt;/pre&gt;", "", $paragraph);
-            $paragraph = "<pre>" . $paragraph . "</pre>\n";
+				   preg_match('/&lt;\/pre&gt;/m', $paragraph, $matches)) {
+			$paragraph = str_replace("&lt;pre&gt;", "", $paragraph);
+			$paragraph = str_replace("&lt;/pre&gt;", "", $paragraph);
+			$paragraph = "<pre>" . $paragraph . "</pre>\n";
 		} else {
 			$paragraph = "<p>" . $paragraph . "</p>\n";
 		}
@@ -242,19 +244,19 @@ function replace_keyword($text) {
 		$i = 0;
 		$left = "<<<";
 		$right = ">>>";
-		{
-			$item = trim($entry_name);
-			$a[] = '<b>' . translate($item) . "</b>";
-			$text = str_replace(translate($item), 
+		foreach ($see_also as $item) {
+			$item = trim($item);
+			$a[] = '<a href="' . entry_name_to_file_name($item) . '.html">' . translate($item) . "</a>";
+			$text = preg_replace("/\\b" . translate($item) . "\\b/",
 				$left . $i . $right,
 				$text
 			);
 			$i++;
 		}
-		foreach ($see_also as $item) {
-			$item = trim($item);
-			$a[] = '<a href="' . entry_name_to_file_name($item) . '.html">' . translate($item) . "</a>";
-			$text = preg_replace("/\\b" . translate($item) . "\\b/",
+		{
+			$item = trim($entry_name);
+			$a[] = '<b>' . translate($item) . "</b>";
+			$text = str_replace(translate($item), 
 				$left . $i . $right,
 				$text
 			);
@@ -287,7 +289,7 @@ function get_body($entry_type) {
 	(
 		get_field("parameters") != '' ?
 		(
-			$entry_type == "構造体" ?
+			($entry_type == "構造体" || $entry_type == "インターフェース") ?
 			'<h2>メンバー</h2>' . "\n" :
 			'<h2>引数</h2>' . "\n"
 		) . 
@@ -503,6 +505,28 @@ if ($mysqli) {
 			fclose($fp);
 		}
 
+		$fp = fopen($output_dir . "/interfaces.html", "w");
+		if ($fp) {
+			$header = get_header("インターフェース", "interfaces");
+			fputs($fp, $header);
+			fputs($fp, 
+				"<h2>インターフェース</h2>\n" .
+				"<ul>\n"
+			);
+			foreach ($arrays as $assoc) {
+				$entry_name = $assoc['entry_name'];
+				$entry_type = $assoc['entry_type'];
+				if ($entry_type != 'インターフェース') continue;
+				fputs($fp, '<li><a href="' . entry_name_to_file_name($entry_name) . '.html">' . $entry_name . " " . $entry_type . '</a></li>' . "\n");
+			}
+			fputs($fp, 
+				"</ul>\n"
+			);
+			$footer = get_footer('interfaces');
+			fputs($fp, $footer);
+			fclose($fp);
+		}
+
 		$fp = fopen($output_dir . "/macros.html", "w");
 		if ($fp) {
 			$header = get_header("マクロ", "macros");
@@ -545,6 +569,7 @@ if ($mysqli) {
 	<li><a href="functions.html">関数</a></li>
 	<li><a href="messages.html">メッセージ</a></li>
 	<li><a href="structures.html">構造体</a></li>
+	<li><a href="interfaces.html">インターフェース</a></li>
 	<li><a href="macros.html">マクロ</a></li>
 </ul>
 </div>
