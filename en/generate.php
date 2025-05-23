@@ -533,6 +533,7 @@ if ($mysqli) {
 		$header = get_header("IME Hackerz", "index");
 		fputs($fp, $header);
 		fputs($fp, "<h2>Welcome To IME Hackerz</h2>\n");
+		date_default_timezone_set('America/New_York');
 		$now = date("Y-m-d H:i:s");
 		$body =<<<__HTML__
 <p>IME Hackerz is an information site about old IME technology.</p>

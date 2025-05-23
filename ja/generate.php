@@ -535,6 +535,7 @@ if ($mysqli) {
 		$header = get_header("IMEハッカーズ☆", "index");
 		fputs($fp, $header);
 		fputs($fp, "<h2>「IMEハッカーズ☆」へようこそ！</h2>\n");
+		date_default_timezone_set('Asia/Tokyo');
 		$now = date("Y-m-d H:i:s");
 		$body =<<<__HTML__
 <div class="contents">
