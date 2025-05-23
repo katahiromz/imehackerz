@@ -268,6 +268,7 @@ if ($mysqli) {
 	<a href="add_entry.php">Add Entry</a> | 
 	<a href="add_table.php">Add Table</a> | 
 	<a href="edit_entry.php?entry_name=<?= $_GET["entry_name"] ?>">Edit "<?= $_GET["entry_name"] ?>"</a> |
+	<a href="../ja/show_entry.php?entry_name=<?= $_GET["entry_name"] ?>">Japanese</a> |
 	<a href="generate.php">Generate</a>
 </p>
 
@@ -345,6 +346,7 @@ if ($mysqli) {
 	<a href="add_entry.php">Add Entry</a> | 
 	<a href="add_table.php">Add Table</a> | 
 	<a href="edit_entry.php?entry_name=<?= $_GET["entry_name"] ?>">Edit "<?= $_GET["entry_name"] ?>"</a> |
+	<a href="../ja/show_entry.php?entry_name=<?= $_GET["entry_name"] ?>">Japanese</a> |
 	<a href="generate.php">Generate</a>
 </p>
 

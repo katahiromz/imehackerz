@@ -270,6 +270,7 @@ if ($mysqli) {
 	<a href="add_entry.php">項目を追加する</a> | 
 	<a href="add_table.php">表を追加する</a> | 
 	<a href="edit_entry.php?entry_name=<?= $_GET["entry_name"] ?>">「<?= $_GET["entry_name"] ?>」を編集する</a> |
+	<a href="../en/show_entry.php?entry_name=<?= $_GET["entry_name"] ?>">English</a> |
 	<a href="generate.php">生成する</a>
 </p>
 
@@ -347,6 +348,7 @@ if ($mysqli) {
 	<a href="add_entry.php">項目を追加する</a> | 
 	<a href="add_table.php">表を追加する</a> | 
 	<a href="edit_entry.php?entry_name=<?= $_GET["entry_name"] ?>">「<?= $_GET["entry_name"] ?>」を編集する</a> |
+	<a href="../en/show_entry.php?entry_name=<?= $_GET["entry_name"] ?>">English</a> |
 	<a href="generate.php">生成する</a>
 </p>
 
