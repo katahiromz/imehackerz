@@ -15,6 +15,7 @@ define('TYPE_ACTION', 'アクション');
 define('TYPE_STRUCTURE', '構造体');
 define('TYPE_INTERFACE', 'インターフェース');
 define('TYPE_MACRO', 'マクロ');
+define('TYPE_TYPE', '型');
 
 function imehack_translate($mysqli, $original)
 {

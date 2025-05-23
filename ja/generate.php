@@ -33,6 +33,7 @@ function get_header($title, $entry_name) {
 	<h1><a href="index.html">IMEハッカーズ☆</a></h1>
 	<ul class="menu clearFix">
 		<li><a href="articles.html">記事</a></li>
+		<li><a href="types.html">基本型</a></li>
 		<li><a href="functions.html">関数</a></li>
 		<li><a href="messages.html">メッセージ</a></li>
 		<li><a href="structures.html">構造体</a></li>
@@ -545,6 +546,28 @@ if ($mysqli) {
 				"</ul>\n"
 			);
 			$footer = get_footer('macros');
+			fputs($fp, $footer);
+			fclose($fp);
+		}
+
+		$fp = fopen($output_dir . "/types.html", "w");
+		if ($fp) {
+			$header = get_header("型", "types");
+			fputs($fp, $header);
+			fputs($fp, 
+				"<h2>型</h2>\n" .
+				"<ul>\n"
+			);
+			foreach ($arrays as $assoc) {
+				$entry_name = $assoc['entry_name'];
+				$entry_type = $assoc['entry_type'];
+				if ($entry_type != constant('TYPE_TYPE')) continue;
+				fputs($fp, '<li><a href="' . entry_name_to_file_name($entry_name) . '.html">' . $entry_name . " " . $entry_type . '</a></li>' . "\n");
+			}
+			fputs($fp, 
+				"</ul>\n"
+			);
+			$footer = get_footer('types');
 			fputs($fp, $footer);
 			fclose($fp);
 		}
