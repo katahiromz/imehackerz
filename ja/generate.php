@@ -589,6 +589,7 @@ if ($mysqli) {
 <p>IMEハッカーズ☆は、古いIMEの技術情報がてんこ盛りな情報サイトです。</p>
 <ul>
 	<li><a href="articles.html">記事</a></li>
+	<li><a href="types.html">基本型</a></li>
 	<li><a href="functions.html">関数</a></li>
 	<li><a href="messages.html">メッセージ</a></li>
 	<li><a href="structures.html">構造体</a></li>

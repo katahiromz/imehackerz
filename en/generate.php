@@ -586,6 +586,7 @@ if ($mysqli) {
 <p>IME Hackerz is an information site about old IME technology.</p>
 <ul>
 	<li><a href="articles.html">Articles</a></li>
+	<li><a href="types.html">Basic Types</a></li>
 	<li><a href="functions.html">Functions</a></li>
 	<li><a href="messages.html">Messages</a></li>
 	<li><a href="structures.html">Structures</a></li>
