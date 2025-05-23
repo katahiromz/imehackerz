@@ -98,7 +98,7 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 <textarea rows="5" cols="55" name="return_value"></textarea><br />
 解説:<br />
 <textarea rows="5" cols="55" name="remarks"></textarea><br />
-参照 (複数可。'|'で区切る): <input type="text" size="32" name="see_also" /><br />
+参照 (複数可。','で区切る): <input type="text" size="32" name="see_also" /><br />
 ヘッダー: <input type="text" size="32" name="header" /><br />
 モジュール: <input type="text" size="32" name="modules" /><br />
 情報源:<br />

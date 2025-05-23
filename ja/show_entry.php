@@ -172,7 +172,7 @@ function get_sources($name) {
 function get_see_also() {
 	$see_also = get_field("see_also");
 	if ($see_also) {
-		$see_also = explode("|", $see_also);
+		$see_also = explode(",", $see_also);
 		$a = array();
 		foreach ($see_also as $item) {
 			$item = trim($item);
@@ -186,7 +186,7 @@ function get_see_also() {
 function replace_keyword($text) {
 	$see_also = get_field("see_also");
 	if ($see_also) {
-		$see_also = explode("|", $see_also);
+		$see_also = explode(",", $see_also);
 		sort($see_also);
 		$see_also = array_reverse($see_also);
 		foreach ($see_also as $item) {
