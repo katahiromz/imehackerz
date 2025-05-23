@@ -76,6 +76,11 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 <title>Add Entry</title>
 </head>
 <body>
+<p>
+	<a href="entries.php">項目一覧</a> |
+	<a href="generate.php">生成する</a>
+</p>
+<hr />
 <form method="POST">
 <input type="hidden" name="tepo" value="don" />
 項目名: <input type="text" size="32" name="entry_name" /><br />
@@ -105,7 +110,9 @@ ROSにおける所在:<br />
 次のページ: <input type="text" size="32" name="next_page" /><br />
 <input type="submit" value="送信" />
 </form>
+<hr />
 <p>
-	<a href="entries.php">項目一覧</a>
+	<a href="entries.php">項目一覧</a> |
+	<a href="generate.php">生成する</a>
 </p>
 </body></html>

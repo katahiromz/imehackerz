@@ -76,6 +76,12 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 <title>Add Entry</title>
 </head>
 <body>
+<p>
+	<a href="entries.php">Entries</a> |
+	<a href="add_table.php">Add Table</a> | 
+	<a href="generate.php">Generate</a>
+</p>
+<hr />
 <form method="POST">
 <input type="hidden" name="tepo" value="don" />
 Entry Name: <input type="text" size="32" name="entry_name" /><br />
@@ -105,7 +111,10 @@ Previous Page: <input type="text" size="32" name="prev_page" /><br />
 Next Page: <input type="text" size="32" name="next_page" /><br />
 <input type="submit" value="Send" />
 </form>
+<hr />
 <p>
-	<a href="entries.php">Entries</a>
+	<a href="entries.php">Entries</a> |
+	<a href="add_table.php">Add Table</a> | 
+	<a href="generate.php">Generate</a>
 </p>
 </body></html>

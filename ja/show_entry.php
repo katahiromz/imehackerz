@@ -264,6 +264,17 @@ if ($mysqli) {
 <title><?= get_field("entry_name") ?></title>
 </head>
 <body>
+
+<p>
+	<a href="entries.php">項目一覧</a> | 
+	<a href="add_entry.php">項目を追加する</a> | 
+	<a href="add_table.php">表を追加する</a> | 
+	<a href="edit_entry.php?entry_name=<?= $_GET["entry_name"] ?>">「<?= $_GET["entry_name"] ?>」を編集する</a> |
+	<a href="generate.php">生成する</a>
+</p>
+
+<hr />
+
 <h1><?= translate(get_field("entry_name")) . " " . get_field("entry_type") ?></h1>
 
 <?= replace_keyword(get_paragraph(get_field("description"))) ?>
@@ -329,11 +340,14 @@ if ($mysqli) {
 
 <?= get_field("next_page") ?>
 
+<hr />
+
 <p>
 	<a href="entries.php">項目一覧</a> | 
 	<a href="add_entry.php">項目を追加する</a> | 
 	<a href="add_table.php">表を追加する</a> | 
-	<a href="edit_entry.php?entry_name=<?= $_GET["entry_name"] ?>">「<?= $_GET["entry_name"] ?>」を編集する</a>
+	<a href="edit_entry.php?entry_name=<?= $_GET["entry_name"] ?>">「<?= $_GET["entry_name"] ?>」を編集する</a> |
+	<a href="generate.php">生成する</a>
 </p>
 
 </body></html>

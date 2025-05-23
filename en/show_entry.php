@@ -262,6 +262,17 @@ if ($mysqli) {
 <title><?= get_field("entry_name") ?></title>
 </head>
 <body>
+
+<p>
+	<a href="entries.php">Entries</a> | 
+	<a href="add_entry.php">Add Entry</a> | 
+	<a href="add_table.php">Add Table</a> | 
+	<a href="edit_entry.php?entry_name=<?= $_GET["entry_name"] ?>">Edit "<?= $_GET["entry_name"] ?>"</a> |
+	<a href="generate.php">Generate</a>
+</p>
+
+<hr />
+
 <h1><?= translate(get_field("entry_name")) . " " . get_field("entry_type") ?></h1>
 
 <?= replace_keyword(get_paragraph(get_field("description"))) ?>
@@ -327,11 +338,14 @@ if ($mysqli) {
 
 <?= get_field("next_page") ?>
 
+<hr />
+
 <p>
 	<a href="entries.php">Entries</a> | 
 	<a href="add_entry.php">Add Entry</a> | 
 	<a href="add_table.php">Add Table</a> | 
-	<a href="edit_entry.php?entry_name=<?= $_GET["entry_name"] ?>">Edit "<?= $_GET["entry_name"] ?>"</a>
+	<a href="edit_entry.php?entry_name=<?= $_GET["entry_name"] ?>">Edit "<?= $_GET["entry_name"] ?>"</a> |
+	<a href="generate.php">Generate</a>
 </p>
 
 </body></html>

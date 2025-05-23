@@ -115,6 +115,17 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 <title>編集</title>
 </head>
 <body>
+
+<p>
+	<a href="entries.php">項目一覧</a> |
+	<a href="add_entry.php">項目を追加する</a> | 
+	<a href="add_table.php">表を追加する</a> | 
+	<a href="show_entry.php?entry_name=<?= $_GET["entry_name"] ?>"><?= $_GET["entry_name"] ?>を表示する</a> |
+	<a href="generates.php">生成する</a> | 
+</p>
+
+<hr />
+
 <form method="POST">
 <input type="hidden" name="tepo" value="don" />
 項目名: <input type="text" size="32" name="entry_name" value="<?= get_field("entry_name");?>" /><br />
@@ -145,10 +156,13 @@ ROSにおける所在:<br />
 <input type="submit" value="送信" />
 </form>
 
+<hr />
+
 <p>
 	<a href="entries.php">項目一覧</a> |
 	<a href="add_entry.php">項目を追加する</a> | 
 	<a href="add_table.php">表を追加する</a> | 
-	<a href="show_entry.php?entry_name=<?= $_GET["entry_name"] ?>"><?= $_GET["entry_name"] ?>を表示する</a>
+	<a href="show_entry.php?entry_name=<?= $_GET["entry_name"] ?>"><?= $_GET["entry_name"] ?>を表示する</a> |
+	<a href="generates.php">生成する</a> | 
 </p>
 </body></html>

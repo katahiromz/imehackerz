@@ -62,6 +62,17 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 <title>表の追加</title>
 </head>
 <body>
+
+<p>
+	<a href="entries.php">項目一覧</a> | 
+	<a href="add_entry.php">項目を追加する</a> | 
+	<a href="generate.php">生成する</a>
+</p>
+
+<hr />
+
+<h1>表を追加する</h1>
+
 <form method="POST">
 <input type="hidden" name="tepo" value="don" />
 表の名前: <input type="text" size="32" name="table_name" /><br />
@@ -69,7 +80,13 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 <textarea rows="10" cols="55" name="contents"></textarea><br />
 <input type="submit" value="送信" />
 </form>
+
+<hr />
+
 <p>
-	<a href="entries.php">Entries</a>
+	<a href="entries.php">項目一覧</a> | 
+	<a href="add_entry.php">項目を追加する</a> | 
+	<a href="generate.php">生成する</a>
 </p>
+
 </body></html>
