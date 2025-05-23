@@ -101,6 +101,15 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 <title>Edit Table</title>
 </head>
 <body>
+
+<p>
+	<a href="entries.php">Entries</a> |
+	<a href="add_entry.php">Add Entry</a> | 
+	<a href="add_table.php">Add Table</a>
+</p>
+
+<hr />
+
 <form method="POST">
 <input type="hidden" name="tepo" value="don" />
 Table Name: <input type="text" size="32" name="table_name" value="<?= get_field("table_name");?>" /><br />
@@ -109,9 +118,11 @@ Contents:<br />
 <input type="submit" value="Send" />
 </form>
 
+<hr />
+
 <p>
 	<a href="entries.php">Entries</a> |
 	<a href="add_entry.php">Add Entry</a> | 
-	<a href="add_table.php">Add Table</a> | 
+	<a href="add_table.php">Add Table</a>
 </p>
 </body></html>

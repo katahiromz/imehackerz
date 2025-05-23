@@ -55,7 +55,7 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 		$q .= $mysqli->real_escape_string($_GET["table_name"]);
 		$q .= "'";
 		if ($mysqli->query($q)) {
-			echo "Updated.";
+			echo "更新されました。";
 		} else {
 			echo $mysqli->error;
 		}
@@ -101,17 +101,28 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 <title>表の編集</title>
 </head>
 <body>
+
+<p>
+	<a href="entries.php">項目一覧</a> |
+	<a href="add_entry.php">項目を追加する</a> | 
+	<a href="add_table.php">表を追加する</a>
+</p>
+
+<hr />
+
 <form method="POST">
 <input type="hidden" name="tepo" value="don" />
 表の名前: <input type="text" size="32" name="table_name" value="<?= get_field("table_name");?>" /><br />
 中身:<br />
 <textarea rows="10" cols="55" name="contents"><?= get_field("contents");?></textarea><br />
-<input type="submit" value="送信" />
+<input type="submit" value="更新" />
 </form>
+
+<hr />
 
 <p>
 	<a href="entries.php">項目一覧</a> |
 	<a href="add_entry.php">項目を追加する</a> | 
-	<a href="add_table.php">表を追加する</a> | 
+	<a href="add_table.php">表を追加する</a>
 </p>
 </body></html>

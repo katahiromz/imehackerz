@@ -69,7 +69,7 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 		$q .= $mysqli->real_escape_string($_GET["entry_name"]);
 		$q .= "'";
 		if ($mysqli->query($q)) {
-			echo "Updated.";
+			echo "更新されました。";
 		} else {
 			echo $mysqli->error;
 		}
@@ -127,6 +127,8 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 <hr />
 
 <form method="POST">
+<input type="submit" value="Update" />
+<br />
 <input type="hidden" name="tepo" value="don" />
 Entry Name: <input type="text" size="32" name="entry_name" value="<?= get_field("entry_name");?>" /><br />
 Type of Entry: <input type="text" size="32" name="entry_type" value="<?= get_field("entry_type");?>" /><br />
@@ -153,7 +155,8 @@ Analisys:<br />
 <textarea rows="5" cols="55" name="analysis"><?= get_field("analysis");?></textarea><br />
 Previous Page: <input type="text" size="32" name="prev_page" value="<?= get_field("prev_page");?>" /><br />
 Next Page: <input type="text" size="32" name="next_page" value="<?= get_field("next_page");?>" /><br />
-<input type="submit" value="Send" />
+<br />
+<input type="submit" value="Update" />
 </form>
 
 <hr />

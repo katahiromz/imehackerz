@@ -127,6 +127,8 @@ if (isset($_POST["tepo"]) && $_POST["tepo"] == "don") {
 <hr />
 
 <form method="POST">
+<input type="submit" value="更新" />
+<br />
 <input type="hidden" name="tepo" value="don" />
 項目名: <input type="text" size="32" name="entry_name" value="<?= get_field("entry_name");?>" /><br />
 項目の種類: <input type="text" size="32" name="entry_type" value="<?= get_field("entry_type");?>" /><br />
@@ -153,7 +155,8 @@ ROSにおける所在:<br />
 <textarea rows="5" cols="55" name="analysis"><?= get_field("analysis");?></textarea><br />
 前のページ: <input type="text" size="32" name="prev_page" value="<?= get_field("prev_page");?>" /><br />
 次のページ: <input type="text" size="32" name="next_page" value="<?= get_field("next_page");?>" /><br />
-<input type="submit" value="送信" />
+<br />
+<input type="submit" value="更新" />
 </form>
 
 <hr />
