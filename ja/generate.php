@@ -45,7 +45,7 @@ function get_header($title, $entry_name) {
 function get_footer($entry_name) {
 	return '</div>
 <div class="footer">
-    <small>&copy;Katayama Hirofumi MZ</small><br/>
+    <small>&copy; katahiromz</small><br/>
 	<small><a href="mailto:katayama.hirofumi.mz@gmail.com?subject=' . entry_name_to_file_name($entry_name) . '">このページの間違いを報告する</a></small><br/>
 	<small><a href="mailto:katayama.hirofumi.mz@gmail.com">katayama.hirofumi.mz@gmail.com</a></small>
 </div>
