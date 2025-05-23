@@ -287,7 +287,7 @@ function get_body($entry_type) {
 		(
 			$entry_type == "structure" ?
 			'<h2>Members</h2>' . "\n" :
-			'<h2>Paramters</h2>' . "\n"
+			'<h2>Parameters</h2>' . "\n"
 		) . 
 		replace_keyword(get_parameters("parameters")) : ""
 	) . (
