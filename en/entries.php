@@ -41,7 +41,8 @@ if ($mysqli) {
 	<a href="add_entry.php">Add Entry</a> |
 	<a href="add_table.php">Add Table</a> |
 	<a href="../ja/entries.php">Japanese</a> |
-	<a href="generate.php">Generate</a>
+	<a href="generate.php">Generate</a> |
+	<a href="../output/en/index.html">index.html</a>
 </p>
 
 <hr />
@@ -66,7 +67,8 @@ if ($mysqli) {
 	<a href="add_entry.php">Add Entry</a> |
 	<a href="add_table.php">Add Table</a> |
 	<a href="../ja/entries.php">Japanese</a> |
-	<a href="generate.php">Generate</a>
+	<a href="generate.php">Generate</a> |
+	<a href="../output/en/index.html">index.html</a>
 </p>
 
 </body></html>

@@ -41,7 +41,8 @@ if ($mysqli) {
 	<a href="add_entry.php">項目を追加する</a> |
 	<a href="add_table.php">表を追加する</a> |
 	<a href="../en/entries.php">English</a> |
-	<a href="generate.php">生成する</a>
+	<a href="generate.php">生成する</a> |
+	<a href="../output/ja/index.html">index.html</a>
 </p>
 
 <hr />
@@ -66,7 +67,8 @@ if ($mysqli) {
 	<a href="add_entry.php">項目を追加する</a> |
 	<a href="add_table.php">表を追加する</a> |
 	<a href="../en/entries.php">English</a> |
-	<a href="generate.php">生成する</a>
+	<a href="generate.php">生成する</a> |
+	<a href="../output/ja/index.html">index.html</a>
 </p>
 
 </body></html>
