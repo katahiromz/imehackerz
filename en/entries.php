@@ -36,6 +36,15 @@ if ($mysqli) {
 <title>Entries</title>
 </head>
 <body>
+
+<p>
+	<a href="add_entry.php">Add Entry</a> |
+	<a href="add_table.php">Add Table</a> |
+	<a href="generate.php">Generate</a>
+</p>
+
+<hr />
+
 <h1>Entries</h1>
 
 <ul>
@@ -50,9 +59,12 @@ if ($mysqli) {
 ?>
 </ul>
 
+<hr />
+
 <p>
 	<a href="add_entry.php">Add Entry</a> |
-	<a href="add_table.php">Add Table</a>
+	<a href="add_table.php">Add Table</a> |
+	<a href="generate.php">Generate</a>
 </p>
 
 </body></html>

@@ -36,6 +36,15 @@ if ($mysqli) {
 <title>項目一覧</title>
 </head>
 <body>
+
+<p>
+	<a href="add_entry.php">項目を追加する</a> |
+	<a href="add_table.php">表を追加する</a> |
+	<a href="generate.php">生成する</a>
+</p>
+
+<hr />
+
 <h1>項目一覧</h1>
 
 <ul>
@@ -50,9 +59,12 @@ if ($mysqli) {
 ?>
 </ul>
 
+<hr />
+
 <p>
 	<a href="add_entry.php">項目を追加する</a> |
-	<a href="add_table.php">表を追加する</a>
+	<a href="add_table.php">表を追加する</a> |
+	<a href="generate.php">生成する</a>
 </p>
 
 </body></html>
