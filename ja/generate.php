@@ -289,7 +289,7 @@ function get_body($entry_type) {
 		(
 			$entry_type == "構造体" ?
 			'<h2>メンバー</h2>' . "\n" :
-			'<h2>パラメータ</h2>' . "\n"
+			'<h2>引数</h2>' . "\n"
 		) . 
 		replace_keyword(get_parameters("parameters")) : ""
 	) . (
