@@ -145,13 +145,14 @@ function get_paragraph($field) {
 
 function get_parameters($name) {
 	$value = get_field($name);
-	if (strstr($value, constant('PARAM_DASH')) === FALSE) {
-		return $value;
-	}
 	$lines = explode(constant('PARAM_SEP'), $value);
 	$a = array();
 	foreach ($lines as $line) {
-		$a[] = explode(constant('PARAM_DASH'), $line);
+		if (strstr($line, constant('PARAM_DASH')) === FALSE) {
+			$a[] = array($line, '');
+		} else {
+			$a[] = explode(constant('PARAM_DASH'), $line);
+		}
 	}
 	$str = "<dl>\n";
 	foreach ($a as $item) {
