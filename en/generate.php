@@ -46,11 +46,14 @@ function get_header($title, $entry_name) {
 }
 
 function get_footer($entry_name) {
+	date_default_timezone_set('America/New_York');
+	$now = date("Y-m-d H:i:s");
 	return '</div>
 <div class="footer">
 	<small>&copy; katahiromz</small><br/>
 	<small><a href="mailto:katayama.hirofumi.mz@gmail.com?subject=' . entry_name_to_file_name($entry_name) . '">Report the mistake of this page</a></small><br/>
-	<small><a href="mailto:katayama.hirofumi.mz@gmail.com">katayama.hirofumi.mz@gmail.com</a></small>
+	<small><a href="mailto:katayama.hirofumi.mz@gmail.com">katayama.hirofumi.mz@gmail.com</a></small><br />
+	<small>Last Updated: ' . $now . '</small>
 </div>
 </body></html>';
 }
@@ -306,6 +309,7 @@ function get_body($entry_type) {
 		""
 	) . (
 		get_field("header") . get_field("modules") != '' ?
+		'<h2>Access</h2>' .
 		'<table border="1" align="center" cellspacing="4">' . "\n" .
 		'<tr>' . "\n" .
 			'<th>Header</th>' . "\n" .
@@ -581,8 +585,6 @@ if ($mysqli) {
 		$header = get_header("IME Hackerz", "index");
 		fputs($fp, $header);
 		fputs($fp, "<h2>Welcome To IME Hackerz</h2>\n");
-		date_default_timezone_set('America/New_York');
-		$now = date("Y-m-d H:i:s");
 		$body =<<<__HTML__
 <p>IME Hackerz is an information site about old IME technology.</p>
 <ul>
@@ -596,7 +598,6 @@ if ($mysqli) {
 </ul>
 </div>
 <p><a href="https://github.com/katahiromz/imehackerz" target="_blank">Browse GitHub repository</a></p>
-<p>Last Updated: {$now}</p>
 __HTML__;
 		fputs($fp, $body);
 		$footer = get_footer('index');
